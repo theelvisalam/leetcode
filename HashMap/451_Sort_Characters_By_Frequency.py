@@ -28,18 +28,12 @@ Note that 'A' and 'a' are treated as two different characters.
 class Solution:
     def frequencySort(self, s: str) -> str:
         letters = {}
-        res = []
-        ct = 0
-
         for l in s:
-            if l not in letters:
-                letters[l] = 1
-            else:
-                letters[l] += 1
-        
-        while letters:
+            letters[l] = letters.get(l, 0) + 1
 
-sol = Solution()
-s = "tree"
-print(sol.frequencySort(s))
+        res = []
+        for char, count in sorted(letters.items(), key=lambda item: item[1], reverse=True):
+            res.append(char * count)
+
+        return "".join(res)
             
