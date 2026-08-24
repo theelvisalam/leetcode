@@ -34,8 +34,16 @@ def build_linked_list(values):
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
+        prev = None
+        curr = head
+        
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
 
-        return True
+        return prev
 
 head = build_linked_list([0, 1, 2, 3])
 sol = Solution()
