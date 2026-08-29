@@ -33,26 +33,17 @@ def build_linked_list(values):
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        if list1 is None and list2 is None:
-            return None
-        if list1 is None:
-            return list2
-        if list2 is None:
-            return list1
+        # if list1 is None and list2 is None:
+        #     return None
+        # if list1 is None:
+        #     return list2
+        # if list2 is None:
+        #     return list1
+        dummy = ListNode()
+        tail = dummy
 
         while list1 or list2:
-            temp = 0
-            curr1 = list1
-            curr2 = list2
-
-            if curr1 < curr2 and curr1 <= curr1.next:
-                continue
-            if curr1 < curr2:
-
-            if curr2 < curr1:
-                temp = curr1
-                curr1 = curr2
-                curr2 = curr1
+            if 
 
 
 
