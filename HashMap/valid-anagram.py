@@ -27,17 +27,37 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if s is None or t is None:
             return False
+        if len(s) != len(t):
+            return False
 
-        letters = {}
+        ls = {}
+        lt = {}
 
         for l in s:
-            if l not in letters.keys():
-                letters[l] = 1
+            if l not in ls.keys():
+                ls[l] = 1
             else:
-                letters[l] = letters.get(l) + 1
+                ls[l] = ls.get(l) + 1
         
         for l in t:
-            if l in letters[]
+            if l not in lt.keys():
+                lt[l] = 1
+            else:
+                lt[l] = lt.get(l) + 1
+
+        for l, ct in ls.items():
+            try:
+                if ct == lt[l]:
+                    continue
+                else:
+                    return False
+            except KeyError:
+                return False
+
+        return True
+
+
+
 s = "racecar"
 t = "carrace"
 sol = Solution()
