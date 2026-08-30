@@ -12,12 +12,17 @@ Note: A board does not need to be full or be solvable to be valid.
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
 
+        rows = {}
+        cols = {}
+        subs = {}
+
         for row in range(len(board)):
+            valRow = board[row]
+            rows[row] = valRow
             for col in range(len(board[0])):
                 val =  board[row][col]
-                print(val)
 
-
+        print(rows)
 board = [
     ["1","2",".",".","3",".",".",".","."],
     ["4",".",".","5",".",".",".",".","."],
