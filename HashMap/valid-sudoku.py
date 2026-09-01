@@ -16,13 +16,13 @@ class Solution:
         cols = {}
         subs = {}
 
-        for row in range(len(board)):
-            valRow = board[row]
-            rows[row] = valRow
-            for col in range(len(board[0])):
-                val =  board[row][col]
+        # print(len(board))
+        # print(len(board[0]))
+        for row in range(len(9)):
+            for col in range(len(9)):
+                val = board[row][col]
+                if (val )
 
-        print(rows)
 board = [
     ["1","2",".",".","3",".",".",".","."],
     ["4",".",".","5",".",".",".",".","."],
