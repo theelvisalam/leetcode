@@ -43,8 +43,11 @@ class MinStack:
         
 minstack = MinStack()
 minstack.push(1)
+print(minstack.top())
 minstack.push(2)
+print(minstack.top())
 minstack.push(0)
 print(minstack.top())
 minstack.pop()
 print(minstack.top())  
+minstack.getMin()
