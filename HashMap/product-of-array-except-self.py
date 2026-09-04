@@ -19,6 +19,20 @@ Output: [0,-6,0,0,0]
 '''
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+        if nums is None:
+            return None
+        
+        exceptSelf = {}
+        res = []
+
+        for i, num in enumerate(nums):
+            if i not in exceptSelf.keys():
+                exceptSelf[i] = []
+            else:
+                exceptSelf[i] = exceptSelf.get(i).append(num)
+
+        print(exceptSelf)
+
         
 nums = [1,2,4,6]
 sol = Solution()
