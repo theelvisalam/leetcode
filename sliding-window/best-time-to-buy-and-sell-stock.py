@@ -26,20 +26,15 @@ class Solution:
         if prices is None:
             return 0
         
-        currProfit = 0
+        profit = 0
+        maxProfit = 0
 
-        for i in range(0, len(prices)):
+        for i in range(len(prices)):
             for j in range(i + 1, len(prices)):
-                print(f"j: {prices[j]} | i: {prices[i]}")
-                if prices[j] - prices[i] <= 0:
-                    continue
-                # elif currProfit > 0 and prices[j] - prices[i] <= 0:
-                #     break
-                else:
-                    currProfit += prices[j] - prices[i]                
-                    # print(prices[j] - prices[i])
-                # print(currProfit)
-        return currProfit
+                profit = prices[j] - prices[i]
+                if profit > maxProfit:
+                    maxProfit = profit
+        return maxProfit
 
 prices = [10,1,5,6,7,1]
 sol = Solution()
