@@ -26,10 +26,8 @@ class Solution:
         res = []
 
         for i, num in enumerate(nums):
-            if i not in exceptSelf.keys():
-                exceptSelf[i] = []
-            else:
-                exceptSelf[i] = exceptSelf.get(i).append(num)
+            
+
 
         print(exceptSelf)
 
