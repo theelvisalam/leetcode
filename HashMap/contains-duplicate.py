@@ -23,9 +23,10 @@ class Solution:
                 ct[num] = 1
             else:
                 ct[num] = ct.get(num) + 1
-        
-        for numCt in ct.values():
-            if numCt >= 2:
+
+        print(ct)
+        for count in ct.values():
+            if count >= 2:
                 return True
 
         return False

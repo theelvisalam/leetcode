@@ -34,31 +34,30 @@ class Solution:
         lt = {}
 
         for l in s:
-            if l not in ls.keys():
+            if l not in ls:
                 ls[l] = 1
             else:
                 ls[l] = ls.get(l) + 1
-        
+
         for l in t:
-            if l not in lt.keys():
+            if l not in lt:
                 lt[l] = 1
             else:
                 lt[l] = lt.get(l) + 1
 
         for l, ct in ls.items():
-            try:
-                if ct == lt[l]:
-                    continue
-                else:
-                    return False
-            except KeyError:
+            if l not in lt.keys():
+                return False
+            if lt[l] == ct:
+                continue
+            else:
                 return False
 
         return True
 
 
 
-s = "racecar"
+s = "racreac"
 t = "carrace"
 sol = Solution()
 print(sol.isAnagram(s, t))

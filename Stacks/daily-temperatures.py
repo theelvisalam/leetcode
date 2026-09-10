@@ -21,7 +21,7 @@ Output: [0,0,0]
 '''
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
-        :will
+        
         
 
 temperatures = [30,38,30,36,35,40,28]
