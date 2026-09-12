@@ -20,20 +20,26 @@ Explanation: 2 does not exist in nums so return -1
 '''
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        if not nums:
-            return -1
+        lo = 0
+        hi = len(nums) - 1
 
-        low = 0
-        high = len(nums) - 1
-
-        while low <= high:
-            mid = (high + low) // 2
+        while lo < hi:
+            mid = (hi + lo) // 2
             midVal = nums[mid]
             if midVal == target:
                 return mid
-            if midVal > target:
-                high = mid - 1
             if midVal < target:
-                low = mid + 1
+                lo = mid + 1
+            if midVal > target:
+                hi = mid - 1
+
         return -1
+
+        
+
+
+nums = [-1,0,3,5,9,12]
+target = 9
+sol = Solution()
+print(sol.search(nums, target))
 
