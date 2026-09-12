@@ -22,11 +22,30 @@ Example 3:
 Input: piles = [30,11,23,4,20], h = 6
 Output: 23
 '''
+import math
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        r = max(piles)
+        l = 1
+
+        res = r
+
+        while l <= r:
+            hours = 0
+            k = (l + r) // 2
+            for p in piles:
+                hours += math.ceil(p / k)
+            if hours <= h:
+                res = min(res, k)
+                r = k - 1
+            else:
+                l = k + 1
+            
+        return res
 
 
-piles = [3,4,7,11]
+piles = [3,6,7,11]
+h = 8
 sol = Solution()
-print(sol.minEatingSpeed(piles, 4))
+print(sol.minEatingSpeed(piles, h))
 
