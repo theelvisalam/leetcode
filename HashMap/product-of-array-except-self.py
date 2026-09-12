@@ -20,16 +20,26 @@ Output: [0,-6,0,0,0]
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         if nums is None:
-            return None
+            return nums
         
-        exceptSelf = {}
-        res = []
+        n = len(nums)
+        res = [0] * n
 
-        for i, num in enumerate(nums):
+        for i in range(n):
+            product = 1
+            for j in range(n):
+                if i == j:
+                    continue
+                product *= nums[j]
+
+            res[i] = product
+
+            
+        return res
+
             
 
 
-        print(exceptSelf)
 
         
 nums = [1,2,4,6]
