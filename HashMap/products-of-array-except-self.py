@@ -19,28 +19,20 @@ Output: [0,-6,0,0,0]
 '''
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        if nums is None:
-            return nums
-        
-        n = len(nums)
-        res = [0] * n
+        res = [1] * len(nums)
 
-        for i in range(n):
-            product = 1
-            for j in range(n):
-                if i == j:
-                    continue
-                product *= nums[j]
+        prefix = 1
+        for i in range(len(nums)):
+            res[i] = prefix
+            prefix *= nums[i]
 
-            res[i] = product
+        postfix = 1
+        for i in range(len(nums) - 1, -1, -1):
+            print(postfix)
+            res[i] *= postfix
+            postfix *= nums[i]
 
-            
         return res
-
-            
-
-
-
         
 nums = [1,2,4,6]
 sol = Solution()
