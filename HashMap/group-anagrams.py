@@ -25,21 +25,18 @@ Input: strs = ["a"]
 Output: [["a"]]
 '''
 from collections import defaultdict
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        #output = [[str,str], [str]]
+        res = defaultdict(list)
+        for str in strs:
+            ct = [0] * 26 #a-z
+            for s in str:
+                ct[ord(s) - ord("a")] += 1
+            res[tuple(ct)].append(str)
+        return list(res.values())
 
-class Solution(object):
-    def groupAnagrams(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: List[List[str]]
-        """
-        hashMap = defaultdict(list)
-        res = []
 
-        for s in strs:
-            sSorted = ''.join(sorted(s))
-            hashMap[sSorted].append(s)
-
-        for j in hashMap.values():
-            res.append(j)
-
-        return res
+strs = ["eat","tea","tan","ate","nat","bat"]
+sol = Solution()
+print(sol.groupAnagrams(strs))
