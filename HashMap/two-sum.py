@@ -28,17 +28,16 @@ Output: [0,1]
 '''
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        idx = {}
+        indices = {}
         res = []
 
         for i, n in enumerate(nums):
-            idx[n] = i
-        
+            indices[n] = i
+
         for i, n in enumerate(nums):
             diff = target - n
-            if diff in idx and idx[diff] != i:
-                return [i, idx[diff]]
-
+            if diff in indices and indices[diff] != i:
+                return [i, indices[diff]]
 nums = [3,4,5,6]
 target = 7
 sol = Solution()
