@@ -14,24 +14,19 @@ Input: nums = [1, 2, 3, 4]
 
 Output: false
 '''
+from collections import defaultdict
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        ct = {}
+        ct = defaultdict(int)
 
         for num in nums:
-            if num not in ct.keys():
-                ct[num] = 1
-            else:
-                ct[num] = ct.get(num) + 1
-
-        print(ct)
-        for count in ct.values():
-            if count >= 2:
-                return True
-
+            ct[num] += 1
+        if 2 in ct.values():
+            return True
         return False
 
+
         
-input = [1, 2, 3, 3]
+input = [1, 2, 3, 4]
 sol = Solution()
 print(sol.hasDuplicate(input))
