@@ -27,14 +27,13 @@ Output: [["a"]]
 from collections import defaultdict
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        #output = [[str,str], [str]]
-        res = defaultdict(list)
+        letter_count = defaultdict(list)
         for str in strs:
-            ct = [0] * 26 #a-z
+            letter_nums = [0] * 26
             for s in str:
-                ct[ord(s) - ord("a")] += 1
-            res[tuple(ct)].append(str)
-        return list(res.values())
+                letter_nums[ord(s) - ord("a")] += 1
+            letter_count[tuple(letter_nums)].append(str)
+        return list(letter_count.values())
 
 
 strs = ["eat","tea","tan","ate","nat","bat"]
