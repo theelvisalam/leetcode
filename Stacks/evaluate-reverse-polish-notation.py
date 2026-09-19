@@ -17,21 +17,6 @@ Explanation: ((1 + 2) * 3) - 4 = 5
 '''
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
-        stack = []
-        for i in range(len(tokens) - 1, -1, -1):
-            stack.append(tokens[i])
-
-        while stack:
-            if stack[-1] is in "+-*/":
-                op = stack.pop()
-                if op == "-":
-                    
-                if op == "+":
-                if op == "*":
-                if op == "/":
-            else:
-                a = stack.pop()
-                b = stack.pop()
 
                 
 tokens = ["1","2","+","3","*","4","-"]
