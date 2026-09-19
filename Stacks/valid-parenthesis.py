@@ -29,6 +29,23 @@ Output: false
 '''
 class Solution(object):
     def isValid(self, s):
+        stack = []
+        close = {
+            ")" : "(",
+            "}" : "{",
+            "]" : "["
+        }
+
+        for p in s:
+            if p in close:
+                if stack and stack[-1] == close[p]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(p)
+
+        return True
 
 s = "([{}])"
 sol = Solution()
