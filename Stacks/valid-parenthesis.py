@@ -45,7 +45,7 @@ class Solution(object):
             else:
                 stack.append(p)
 
-        return True
+        return True if not stack else False
 
 s = "([{}])"
 sol = Solution()
