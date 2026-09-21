@@ -23,19 +23,7 @@ Explanation: No profitable transactions can be made, thus the max profit is 0.
 '''
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        if prices is None:
-            return 0
         
-        profit = 0
-        maxProfit = 0
-
-        for i in range(len(prices)):
-            for j in range(i + 1, len(prices)):
-                profit = prices[j] - prices[i]
-                if profit > maxProfit:
-                    maxProfit = profit
-        return maxProfit
-
 prices = [10,1,5,6,7,1]
 sol = Solution()
 print(sol.maxProfit(prices))
