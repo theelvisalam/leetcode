@@ -19,6 +19,22 @@ class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stk = []
 
-tokens = ["1","2","+","3","*","4","/"]
+        for t in tokens:
+            if t == "+":
+                stk.append(stk.pop() + stk.pop())
+            elif t == "-":
+                a, b = stk.pop(), stk.pop()
+                stk.append(b - a)
+            elif t == "*":
+                stk.append(stk.pop() * stk.pop())
+            elif t == "/":
+                a, b = stk.pop(), stk.pop()
+                stk.append(int(float(b) / a))
+            else:
+                stk.append(int(t))
+
+        return stk[0]
+
+tokens = ["1","2","+","3","*","4","-"]
 sol = Solution()
 print(sol.evalRPN(tokens))
