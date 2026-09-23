@@ -17,16 +17,14 @@ Output: false
 from collections import defaultdict
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        ct = defaultdict(int)
+        seen = set()
 
         for num in nums:
-            ct[num] += 1
-        if 2 in ct.values():
-            return True
+            if num in seen:
+                return True
+            seen.add(num)
         return False
 
-
-        
-input = [1, 2, 3, 4]
+input = [1, 2, 1, 4]
 sol = Solution()
 print(sol.hasDuplicate(input))
