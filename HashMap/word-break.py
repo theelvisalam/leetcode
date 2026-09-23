@@ -23,13 +23,9 @@ Output: false
 '''
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        if s is None:
-            return False
+        wordSet = set(wordDict)
 
-        words = {}
-        for word in wordDict:
-            words
-            for l in s:
+        for word in wordSet:
 
              
 sol = Solution()

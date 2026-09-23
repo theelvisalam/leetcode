@@ -15,19 +15,6 @@ Output: 2
 '''
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        n = {}
-        majority = 0
-        ct = 0
-        for num in nums:
-            if num not in n:
-                n[num] = []
-            n[num].append(num)
-
-        for k, v in n.items():
-            if len(v) > ct:
-                ct = len(v)
-                majority = k
-        return majority
 
 sol = Solution()
 nums = [2,2,1,1,1,2,2]
