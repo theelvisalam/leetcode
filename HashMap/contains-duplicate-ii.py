@@ -20,15 +20,7 @@ Output: false
 '''
 class Solution:
     def containsNearbyDuplicate(self, nums: list[int], k: int) -> bool:
-        window = set()
 
-        for r in range(len(nums)):
-            if r > k:
-                window.remove(nums[r - k - 1])
-            if nums[r] in window:
-                return True
-            window.add(nums[r])
-        return False
 
 nums = [1,0,1,1]
 k = 1
