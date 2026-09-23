@@ -17,7 +17,14 @@ Output: false
 from collections import defaultdict
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
+        seen = set()
 
-input = [1, 2, 1, 4]
+        for n in nums:
+            if n in seen:
+                return True
+            seen.add(n)
+        return False
+
+input = [1, 2, 3, 4]
 sol = Solution()
 print(sol.hasDuplicate(input))
