@@ -27,13 +27,3 @@ Note that 'A' and 'a' are treated as two different characters.
 '''
 class Solution:
     def frequencySort(self, s: str) -> str:
-        letters = {}
-        for l in s:
-            letters[l] = letters.get(l, 0) + 1
-
-        res = []
-        for char, count in sorted(letters.items(), key=lambda item: item[1], reverse=True):
-            res.append(char * count)
-
-        return "".join(res)
-            
