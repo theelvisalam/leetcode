@@ -28,20 +28,17 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-
         lt = defaultdict(int)
         ls = defaultdict(int)
-        
         for l in t:
             lt[l] += 1
-
         for l in s:
             ls[l] += 1
-
-        for l, i in lt.items():
-            if ls[l] != i:
-               return False
+        for l, ct in lt.items():
+            if ls[l] != ct:
+                return False
         return True
+
 
 s = "racecar"
 t = "carrace"
