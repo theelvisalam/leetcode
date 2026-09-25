@@ -19,19 +19,9 @@ Output: [0,-6,0,0,0]
 '''
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        res = [1] * len(nums)
-
-        pre = 1
-        for i in range(len(nums)):
-            res[i] = pre
-            pre *= nums[i]
-
-        post = 1
-        for i in range(len(nums) - 1, -1, -1):
-            res[i] *= post
-            post *= nums[i]
-
-        return res
+        prefix = 0
+        for n 
+        postfix = 0
         
 nums = [1,2,4,6]
 sol = Solution()
