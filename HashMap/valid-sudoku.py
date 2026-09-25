@@ -42,6 +42,21 @@ Explanation: There are two 1's in the top-left 3x3 sub-box.
 from collections import defaultdict
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
+        rows = defaultdict(set)
+        cols = defaultdict(set)
+        squares = defaultdict(set)
+
+        for r in range(len(board)):
+            for c in range(len(board[0])):
+                if board[r][c] == ".":
+                    continue
+                if board[r][c] in rows or board[r][c] in cols or board[r][c] in squares[(r// 3, c // 3)]:
+                    return False
+                rows[r].add(board[r][c])
+                cols[c].add(board[r][c])
+                squares[(r // 3, c // 3)].add(board[r][c])
+        return True
+
 
 board = [
     ["1","2",".",".","3",".",".",".","."],
