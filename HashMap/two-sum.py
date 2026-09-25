@@ -26,18 +26,19 @@ Input: nums = [5,5], target = 10
 
 Output: [0,1]
 '''
+from collections import defaultdict
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        indices = {}
-        res = []
+        numIdx = defaultdict(int)
 
         for i, n in enumerate(nums):
-            indices[n] = i
+            numIdx[n] = i
 
         for i, n in enumerate(nums):
             diff = target - n
-            if diff in indices and indices[diff] != i:
-                return [i, indices[diff]]
+            if diff in numIdx and numIdx[diff] != i:
+                return [i, numIdx[diff]]
+
 nums = [3,4,5,6]
 target = 7
 sol = Solution()
