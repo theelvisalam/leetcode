@@ -55,8 +55,6 @@ class Solution:
                 cols[col].add(board[row][col])
                 rows[row].add(board[row][col])
                 squares[(row // 3, col // 3)].add(board[row][col])
-        print(rows)
-
         return True
 
 board = [
