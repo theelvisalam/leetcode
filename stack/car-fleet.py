@@ -35,3 +35,9 @@ Explanation: The cars starting at 4 and 7 become a fleet at position 10. The car
 class Solution:
     def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
         
+
+target = 10
+position = [1,4]
+speed = [3,2]
+sol = Solution()
+print(sol.carFleet(target, position, speed))
