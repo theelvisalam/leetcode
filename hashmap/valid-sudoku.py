@@ -45,7 +45,7 @@ class Solution:
         rows = defaultdict(set)
         cols = defaultdict(set)
         squares = defaultdict(set)
-
+        
         for r in range(len(board)):
             for c in range(len(board[0])):
                 if board[r][c] == ".":
@@ -56,7 +56,7 @@ class Solution:
                 cols[c].add(board[r][c])
                 squares[(r // 3, c // 3)].add(board[r][c])
         return True
-        
+
 board = [
     ["1","2",".","1","3",".",".",".","."],
     ["4",".",".","5",".",".",".",".","."],
