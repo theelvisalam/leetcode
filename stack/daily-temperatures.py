@@ -21,8 +21,16 @@ Output: [0,0,0]
 '''
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
-        
-        
+        temps = []
+        res = [0] * len(temperatures)
+
+        for i, t in enumerate(temperatures):
+            if t > :wq
+
+            temps.append(t)
+
+
+
 
 temperatures = [30,38,30,36,35,40,28]
 sol = Solution()
