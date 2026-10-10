@@ -26,4 +26,20 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        l = 0
+        r = len(numbers) - 1
 
+        while l < r:
+            sum = numbers[l] + numbers[r]
+
+            if sum == target:
+                return [l + 1, r + 1]
+            if sum < target:
+                l += 1
+            if sum > target:
+                r -= 1
+
+numbers = [2,7,11,15]
+target = 9
+sol = Solution()
+print(sol.twoSum(numbers, target))

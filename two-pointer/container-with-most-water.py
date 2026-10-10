@@ -19,10 +19,20 @@ Output: 4
 '''
 class Solution:
     def maxArea(self, heights: List[int]) -> int:
+        l = 0
+        r = len(heights) - 1
+        maxArea = 0
 
-        for i in range(len(height)):
-            for j in range(i + 1, len(height)):
-                w = 
+        while l < r:
+            minH = min(heights[l], heights[r])
+            length = r - l
+            area = minH * length
+            if minH == heights[l]:
+                l += 1
+            if minH == heights[r]:
+                r -= 1
+            maxArea = max(maxArea, area)
+        return maxArea
 
         
 height = [1,7,2,5,4,7,3,6]
