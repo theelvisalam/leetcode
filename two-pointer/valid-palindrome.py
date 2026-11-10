@@ -23,15 +23,23 @@ Explanation: "tabacat" is not a palindrome.
 '''
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        chars = "".join([char.lower() for char in s if char.isalnum()])
-        l, r = 0,len(chars) - 1 
+        # chars = "".join(char.lower() for char in s if char.isalnum())
+        l, r = 0,len(s) - 1
 
         while l < r:
-            if chars[l] == chars[r]:
+            lchar = s[l]
+            rchar = s[r]
+            if lchar.isalnum() and rchar.isalnum():
+                if lchar.lower() == rchar.lower():
+                    l += 1
+                    r -= 1
+                else:
+                    return False
+            if not lchar.isalnum():
                 l += 1
+            if not rchar.isalnum():
                 r -= 1
-            else:
-                return False
+
         return True
 
         
