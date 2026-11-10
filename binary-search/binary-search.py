@@ -20,6 +20,11 @@ Explanation: 2 does not exist in nums so return -1
 '''
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
+        l, r = len(nums) - 1, 0
+        while l < r:
+            lVal = nums[l]
+            rVal = nums[r]
+            mVal = nums[r]
 
 
 nums = [-1,0,3,5,9,12]
