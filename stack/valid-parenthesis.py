@@ -29,22 +29,23 @@ Output: false
 '''
 class Solution(object):
     def isValid(self, s):
-        closing = {
-            ")" : "(",
+        parens = {
             "]" : "[",
-            "}" : "{"
+            "}" : "{",
+            ")" : "("
         }
         stack = []
 
         for p in s:
-            if p in closing:
-                if stack and stack[-1] == closing[p]:
+            if p in parens:
+                if stack and stack[-1] == parens[p]:
                     stack.pop()
                 else:
                     return False
             else:
                 stack.append(p)
-        return True if stack is None else False
+
+        return False if stack is None else True
             
 s = "([{}])"
 sol = Solution()
