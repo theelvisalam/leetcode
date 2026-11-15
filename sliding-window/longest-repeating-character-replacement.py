@@ -20,7 +20,6 @@ Output: 5
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
 
-        
 s = "XYYX"
 k = 2
 sol = Solution()
