@@ -29,24 +29,23 @@ Output: false
 '''
 class Solution(object):
     def isValid(self, s):
-        parens = {
+        parenthesis = {
             "]" : "[",
-            "}" : "{",
-            ")" : "("
+            ")" : "(",
+            "}" : "{"
         }
         stack = []
 
         for p in s:
-            if p in parens:
-                if stack and stack[-1] == parens[p]:
+            if p in parenthesis:
+                if stack and stack[-1] == parenthesis[p]:
                     stack.pop()
                 else:
                     return False
             else:
                 stack.append(p)
 
-        return False if stack is None else True
-            
+        return True if not stack else False
 s = "([{}])"
 sol = Solution()
 print(sol.isValid(s))
